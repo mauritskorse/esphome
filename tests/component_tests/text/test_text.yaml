@@ -1,23 +1,27 @@
 esphome:
   name: test
-  platform: ESP8266
-  board: d1_mini_lite
+
+esp32:
+  board: esp32dev
 
 text:
   - platform: template
     name: "test 1 text"
     id: "it_1"
     optimistic: true
+    mode: text
 
   - platform: template
     name: "test 2 text"
     id: "it_2"
     icon: "mdi:text"
     optimistic: true
-    min: 5
-    max: 255
+    min_length: 5
+    max_length: 255
     internal: false
     initial_value: "Welcome ESPHOME"
+    restore_value: true
+    mode: text
 
   - platform: template
     name: "test 3 key"
@@ -26,4 +30,4 @@ text:
     mode: "password"
     optimistic: true
     internal: true
-    max: 255
+    max_length: 255
